@@ -6,13 +6,13 @@ import axios from 'axios';
 import Blog from './Blog'
 import HomePage from './HomePage'
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import SinglePost from './SinglePost'
 
 
 class App extends Component {
 
   state = {
     data: [],
-    onErrorLoad: ""
   }
 
   componentDidMount() {
@@ -28,16 +28,23 @@ class App extends Component {
 
   }
 
+  handleSinglePost = (slug) => {
+    return this.state.data.filter(value => value.slug === slug)
+  }
+
   render() {
     return (
-
+        
         <Router>
           <div className="App helvetica">
             <TopNav />
             <Switch>
               <Route exact path="/" component={HomePage} />
+            <Route path="/blog/:slug" render={({ match }) => (
+              <SinglePost data={this.handleSinglePost(match.params.slug)[0]} />
+              )} />
               <Route path="/blog" render={props => (
-                <Blog data={this.state.data} />
+                <Blog data={this.state.data} {...props} />
               )}/>
             </Switch>
           </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import slugify from 'slugify';
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 const Blog = (props) => {
 
@@ -9,8 +10,7 @@ const Blog = (props) => {
     <div> 
       {props.data.map((post, i) => (
         <div className={`post-${i}`} key={i}>
-          <h2 dangerouslySetInnerHTML={{ __html: post.title.rendered }}></h2>
-          <small>slug: {slugify(post.title.rendered, { lower: true })}</small>
+          <Link to={`${props.match.path}/${post.slug}`} onClick={props.onClick}><h2 dangerouslySetInnerHTML={{ __html: post.title.rendered }}></h2></Link>
           <p dangerouslySetInnerHTML={{ __html: post.content.rendered }}></p>
         </div>
       ))}
