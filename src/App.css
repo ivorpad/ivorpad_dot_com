@@ -1,0 +1,17 @@
+.top-nav {
+  background: #000;
+}
+
+.top-nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.main-menu {
+  display: flex;
+  list-style: none;
+}
+
+.main-menu li {
+  margin-left: 15px; 
+}
