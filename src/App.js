@@ -5,7 +5,7 @@ import TopNav from './TopNav';
 import axios from 'axios';
 import Blog from './Blog'
 import HomePage from './HomePage'
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SinglePost from './SinglePost'
 
 
@@ -15,16 +15,21 @@ class App extends Component {
     data: [],
   }
 
-  componentDidMount() {
-    const appUrl = '//tfsnippets.ivorpad.com/wp-json/wp/v2/themeforest_snippets';
+  getData = async (url) => await axios.get(url);
 
-    axios.get(appUrl)
-      .then(res => this.setState((prevState) => {
+  componentDidMount() {
+    const url = '//tfsnippets.ivorpad.com/wp-json/wp/v2/themeforest_snippets';
+
+    this.getData(url)
+      .then(response =>
+        this.setState( prevState => {
           return {
-            data: prevState.data.concat(res.data)
-          }
-        }))
-      .catch(err => console.log(`${err.message}: Please connect to the internet.`) ) 
+            data: prevState.data.concat(response.data)
+          };
+        })
+      )
+      .catch(err => console.log(`${err.message}: Please connect to the internet.`));
+
 
   }
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-import slugify from 'slugify';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Blog = (props) => {
 
