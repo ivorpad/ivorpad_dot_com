@@ -6,7 +6,9 @@ import axios from 'axios';
 import Blog from './Blog'
 import HomePage from './HomePage'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import SinglePost from './SinglePost'
+import SinglePost from './SinglePost';
+import About from './About';
+import Contact from './Contact'
 
 
 class App extends Component {
@@ -45,12 +47,14 @@ class App extends Component {
             <TopNav />
             <Switch>
               <Route exact path="/" component={HomePage} />
-            <Route path="/blog/:slug" render={({ match }) => (
-              <SinglePost data={this.handleSinglePost(match.params.slug)[0]} />
+              <Route path="/blog/:slug" render={({ match }) => (
+                <SinglePost data={this.handleSinglePost(match.params.slug)[0]} />
               )} />
               <Route path="/blog" render={props => (
                 <Blog data={this.state.data} {...props} />
               )}/>
+              <Route path="/about" component={About} />
+              <Route path="/contact" component={Contact} />
             </Switch>
           </div>
         </Router>

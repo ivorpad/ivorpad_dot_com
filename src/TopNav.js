@@ -17,8 +17,8 @@ const TopNav = (props) => {
               <ul className="main-menu fr">
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/blog">Blog</Link></li>
-                <li><a href="/">hello</a></li>
-                <li><a href="/">hello</a></li>
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
               </ul>
             </div>
           </div>
