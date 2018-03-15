@@ -1,28 +1,46 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import { Link } from "react-router-dom";
+import Pagination from './Pagination';
+import _ from 'lodash';
 
-const Blog = (props) => {
+class Blog extends Component {
 
-  return (
+  
+  state = {
+    items: [],
+    pageOfItems: []
+  }
 
-    <div> 
-      {props.data.map((post, i) => (
-        <div className={`post-${i}`} key={i}>
-          <Link to={`${props.match.path}/${post.slug}`} onClick={props.onClick}><h2 dangerouslySetInnerHTML={{ __html: post.title.rendered }}></h2></Link>
-          <p dangerouslySetInnerHTML={{ __html: post.content.rendered }}></p>
-        </div>
-      ))}
+  onChangePage = (pageOfItems) => {
+    this.setState({ pageOfItems: pageOfItems });
+  }
 
+  componentWillMount = () => {
+    this.setState({ items: this.props.data })
+  }
+  
 
-      <h1>This is the about page</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione maiores rerum nihil porro. Saepe earum delectus porro minus sequi, iste debitis officia corporis nesciunt quisquam quod doloribus velit error aliquid.</p>
-      <div className="userProfile">
-        <h1>User Profile</h1>
+  componentWillReceiveProps(nextProps) {
+    this.setState({ items: nextProps.data })
+  }
+
+  render() {
+    return (
+
+      <div>
+       
+        {this.state.pageOfItems.map((post, i) => (
+          <div className={`post-${i}`} key={i}>
+            <Link to={`/blog/post/${post.slug}`} onClick={this.props.onClick}><h2 dangerouslySetInnerHTML={{ __html: post.title.rendered }}></h2></Link>
+            <p dangerouslySetInnerHTML={{ __html: post.content.rendered }}></p>
+          </div>
+        ))}
+
+        <Pagination items={this.state.items} onChangePage={this.onChangePage} />
       </div>
-    </div>
-
-  )
+    )
+  }
 }
 
 export default Blog;

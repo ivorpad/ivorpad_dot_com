@@ -1,29 +1,16 @@
 import React, { Component } from 'react'
 import moment from 'moment';
 import { Link } from "react-router-dom";
+import Button from './Button'
 
 export default class HomePage extends Component {
-
-  state = {
-    email: ''
-  }
-
-  setRef = (ref) => {
-    this.email = ref;
-  }
-
-  handleClick = (e) => {
-    e.preventDefault();
-  }
 
   getAge(dateOfBirth) {
     return moment().diff(dateOfBirth, 'years', false)
   }
 
   render() {
-
     const age = this.getAge("1983-04-26");
-
     return (
       <div className="dt w-100">
         <div className="dtc v-mid tc ph3 ph4-1 pv5">
@@ -35,7 +22,7 @@ export default class HomePage extends Component {
 react... I have {age} years.</p>
           </section>
           <Link to="/contact">
-          <button className="f6 lh-copy ba b--black pv2 ph4 br2 bw1 tracked pointer bg-animate hover-bg-black hover-white items-center">Available to Hire</button>
+            <Button> Available to Hire </Button>
           </Link>
         </div>
       </div>

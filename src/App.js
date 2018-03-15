@@ -47,7 +47,7 @@ class App extends Component {
             <TopNav />
             <Switch>
               <Route exact path="/" component={HomePage} />
-              <Route path="/blog/:slug" render={({ match }) => (
+              <Route path="/blog/post/:slug" render={({ match }) => (
                 <SinglePost data={this.handleSinglePost(match.params.slug)[0]} />
               )} />
               <Route path="/blog" render={props => (
