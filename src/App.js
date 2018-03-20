@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 import './index.css'
-import TopNav from './TopNav';
+import TopNav from './components/TopNav';
 import axios from 'axios';
-import Blog from './Blog'
-import HomePage from './HomePage'
+import Blog from './components/Blog'
+import HomePage from './components/HomePage'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import SinglePost from './SinglePost';
-import About from './About';
-import Contact from './Contact';
+import SinglePost from './components/SinglePost';
+import About from './components/About';
+import Contact from './components/Contact';
 import { connect } from 'react-redux';
 
 class App extends Component {
