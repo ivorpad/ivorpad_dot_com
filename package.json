@@ -8,7 +8,9 @@
     "moment": "^2.21.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
     "slugify": "^1.2.9",
     "styled-components": "^3.2.1",
     "tachyons": "^4.9.1"

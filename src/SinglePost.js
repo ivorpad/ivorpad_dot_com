@@ -7,8 +7,8 @@ export default class SinglePost extends Component {
     const { rendered: postContent } = content;
     return (
       <div>
-        <h1>{postTitle}</h1>
-        <p>{postContent}</p>
+        <h1 dangerouslySetInnerHTML={{ __html: postTitle }}></h1>
+        <p dangerouslySetInnerHTML={{ __html: postContent }}></p>
       </div>
     )
   }

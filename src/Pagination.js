@@ -42,7 +42,7 @@ export default class Pagination extends React.Component {
     // get new page of items from items array
     var pageOfItems = items.slice(pager.startIndex, pager.endIndex + 1);
     // update state
-    this.setState({ pager: pager });
+    this.setState({ pager });
 
     // call change page function in parent component
     this.props.onChangePage(pageOfItems);
@@ -52,7 +52,7 @@ export default class Pagination extends React.Component {
     // default to first page
     currentPage = currentPage || 1;
 
-    // default page size is 10
+    // default page size is 5
     pageSize = pageSize || 5;
 
     // calculate total pages

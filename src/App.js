@@ -8,8 +8,8 @@ import HomePage from './HomePage'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SinglePost from './SinglePost';
 import About from './About';
-import Contact from './Contact'
-
+import Contact from './Contact';
+import { connect } from 'react-redux';
 
 class App extends Component {
 
@@ -20,8 +20,7 @@ class App extends Component {
   getData = async (url) => await axios.get(url);
 
   componentDidMount() {
-    const url = '//tfsnippets.ivorpad.com/wp-json/wp/v2/themeforest_snippets';
-
+    const url = '//localhost/wordpress/wp-json/wp/v2/posts?per_page=100';
     this.getData(url)
       .then(response =>
         this.setState( prevState => {
@@ -45,17 +44,22 @@ class App extends Component {
         <Router>
           <div className="App helvetica">
             <TopNav />
-            <Switch>
-              <Route exact path="/" component={HomePage} />
-              <Route path="/blog/post/:slug" render={({ match }) => (
-                <SinglePost data={this.handleSinglePost(match.params.slug)[0]} />
-              )} />
-              <Route path="/blog" render={props => (
-                <Blog data={this.state.data} {...props} />
-              )}/>
-              <Route path="/about" component={About} />
-              <Route path="/contact" component={Contact} />
-            </Switch>
+          <div className="mw9 center ph3-ns">
+            <div className="cf ph2-ns">
+              <Switch>
+                <Route exact path="/" component={HomePage} />
+                <Route path="/blog/post/:slug" render={({ match }) => (
+                  <SinglePost data={this.handleSinglePost(match.params.slug)[0]} />
+                )} />
+                <Route path="/blog" render={props => (
+                  <Blog data={this.state.data} {...props} />
+                )} />
+                <Route path="/about" component={About} />
+                <Route path="/contact" component={Contact} />
+              </Switch>
+            </div>
+          </div>
+           
           </div>
         </Router>
     );
