@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import Pagination from './Pagination';
 
 class Blog extends Component {
-
   
   state = {
     items: [],
@@ -12,7 +11,7 @@ class Blog extends Component {
   }
 
   onChangePage = (pageOfItems) => {
-    this.setState({ pageOfItems: pageOfItems });
+    this.setState({ pageOfItems });
   }
 
   componentWillMount = () => {
