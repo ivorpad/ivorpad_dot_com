@@ -12,7 +12,7 @@ class BlogList extends Component {
 
   handlePageChange = (evt) => {
     const page = Number(evt.target.innerText);
-    this.props.dispatch(push(`/?page=${page}`));
+    this.props.dispatch(push(`/blog/?page=${page}`));
   }
 
   paginationItems = () => {

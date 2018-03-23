@@ -28,11 +28,11 @@ export const fetchFailed = (error) => {
   }
 }
 
-export const fetchPosts = (url) => {
+export const fetchPosts = (url, pagesToFetch) => {
   return function(dispatch) {
 
     dispatch(fetchRequest(true));
-    getData(url).then(posts => {
+    getData(`${url}?per_page=${pagesToFetch}`).then(posts => {
       dispatch(fetchRequest(false))
       dispatch(fetchSuccess(posts.data)) 
     });
