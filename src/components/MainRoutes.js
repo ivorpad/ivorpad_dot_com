@@ -8,7 +8,7 @@ import SinglePost from './SinglePost';
 import { connect } from 'react-redux'
 
 
-class Main extends Component {
+class MainRoutes extends Component {
 
   handleSinglePost = (slug) => {
     return this.props.posts.filter(value => value.slug === slug)[0]
@@ -39,4 +39,4 @@ const mapStateToProps = ({ data }) => {
   }
 }
 
-export default withRouter(connect(mapStateToProps)(Main));
+export default withRouter(connect(mapStateToProps)(MainRoutes));
