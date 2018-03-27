@@ -3,7 +3,7 @@ import { postsLoading, posts } from './posts.reducer';
 
 const rootReducer = combineReducers({
   postsLoading,
-  posts
+  posts,
 });
 
 export default rootReducer;

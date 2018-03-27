@@ -5,7 +5,7 @@ import {
   FETCH_FAILED
 } from '../constants/index';
 
-const getData = async (url) => await axios.get(url);
+const getData = async (url) => await axios.get(url, { crossdomain: true });
 
 export const fetchRequest = (bool) => {
   return {

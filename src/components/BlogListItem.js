@@ -2,14 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default (props) => {
-
-  const { index, post } = props;
-
-  const pages = Math.ceil(props.posts.length / props.perPage);
+  
   const current_page = props.page;
   const start_offset = (current_page - 1) * props.perPage;
   let start_count = 0;
-
+  
   return (
     <div>
       {props.posts.map((post, index) => {
@@ -22,6 +19,7 @@ export default (props) => {
             </div>
           )
         }
+        return null;
       })}
     </div>
   )

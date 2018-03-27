@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { Link } from 'react-router-dom';
 import { push } from 'react-router-redux';
-import { Table, Pagination, PaginationItem } from 'react-bootstrap';
+import { Pagination } from 'react-bootstrap';
 import BlogListItem from '../components/BlogListItem';
+import uuid from 'node-uuid';
 
 const PER_PAGE = 10;
 
@@ -21,7 +20,7 @@ class BlogList extends Component {
 
     for (let number = 1; number <= this.props.posts.length / PER_PAGE; number++) {
       items.push(
-        <Pagination.Item active={number === active} activeLabel={false} onClick={this.handlePageChange}>{number}</Pagination.Item>
+        <Pagination.Item key={uuid.v4()} active={number === active} activeLabel="" onClick={this.handlePageChange}>{number}</Pagination.Item>
       );
     }
 
@@ -30,6 +29,7 @@ class BlogList extends Component {
 
   render() {
     return (
+    this.props.isLoading ? 'loading...' : 
       <div>
         <Pagination bsSize="small">{this.paginationItems()}</Pagination>
         <BlogListItem posts={this.props.posts} onClick={this.props.onClick} page={this.props.page} perPage={PER_PAGE} />    
@@ -42,10 +42,11 @@ const mapStateToProps = (state) => {
 
   const params = new URLSearchParams(state.router.location.search);
   const page = params.get('page');
+  const { data: { posts, postsLoading: isLoading } } = state;
 
   return {
-    posts: state.data.posts,
-    isLoading: state.data.postsLoading,
+    posts,
+    isLoading,
     page: Number(page) || 1
   }
 }

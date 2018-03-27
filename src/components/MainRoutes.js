@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Router, Route, Switch, withRouter } from "react-router-dom";
+import { Route, Switch, withRouter } from "react-router-dom";
 import About from './About';
 import Contact from './Contact';
 import HomePage from './HomePage';
@@ -11,7 +11,7 @@ import { connect } from 'react-redux'
 class MainRoutes extends Component {
 
   handleSinglePost = (slug) => {
-    return this.props.posts.filter(value => value.slug === slug)[0]
+    return this.props.posts.find(value => value.slug === slug)
   }
   
   render() {
