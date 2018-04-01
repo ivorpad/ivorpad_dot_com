@@ -1,3 +1,7 @@
+body {
+  background-color: hsl(0, 0%, 96%);
+}
+
 .top-nav {
   background: #000;
 }
@@ -18,4 +22,22 @@
 
 .active {
   color: red;
+}
+
+.hamburguer {
+  cursor: pointer;
+}
+
+.amp {
+  font-family: Baskerville,
+  'Goudy Old Style',
+  Palatino,
+  'Book Antiqua',
+  serif;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.line-through {
+  text-decoration: line-through;
 }

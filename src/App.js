@@ -18,13 +18,11 @@ class App extends Component {
     return (
       <Provider store={store}>
         <ConnectedRouter history={history}>
-          <div className="App helvetica">
+          <div className="font-sans">
             <TopNav />
-            <div className="mw9 center ph3-ns">
-              <div className="cf ph2-ns">
+              <div className="container mx-auto px-4">
                 <MainRoutes />
               </div>
-            </div>
           </div>
         </ConnectedRouter>
       </Provider>

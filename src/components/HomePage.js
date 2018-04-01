@@ -1,31 +1,33 @@
 import React, { Component } from 'react'
-import moment from 'moment';
 import { Link } from "react-router-dom";
-import Button from './Button'
+import Button from './Button';
+import 'react-tippy/dist/tippy.css';
+import { Tooltip } from 'react-tippy';
 
 export default class HomePage extends Component {
 
-  getAge(dateOfBirth) {
-    return moment().diff(dateOfBirth, 'years', false)
-  }
-
   render() {
-    const age = this.getAge("1983-04-26");
     return (
-      <div className="dt w-100">
-        <div className="dtc v-mid tc ph3 ph4-1 pv5">
-          <h1 className="f1 f2-m">Ivor.</h1>
-          <section className="mw5 mw7-ns center ph5-ns pb4">
-            <p className="intro lh-copy serif">
-              I’m a Full Stack Developer with experience in PHP, JavaScript, CSS and Ruby on Rails.
-    I currently work full time for Envato, but I love tinckering with fun side projects.
-react... I have {age} years.</p>
+      <div className="text-center content-center flex flex-col mt-8 pt-8">
+        <h1 className="pb-6">Welcome, my name is &nbsp;
+          <Tooltip title="(eye-vor || /ʌɪˈvɔːr/)" position="top" trigger="mouseenter" animation="fade" arrow={true} >
+            <span className="border-b-2 border-blue-dark">Ivor</span> 
+          </Tooltip>
+        </h1>
+          <section className="w-2/3 mx-auto mt-8 mb-8">
+          <p className="font-serif leading-normal text-xl">
+            I’m a front-end developer <span className="amp">&</span> UI Designer with 8 years of experience in JavaScript (ES5+) and other current web technologies:
+  React.js, Vue.js, PHP (mostly WordPress dev), CSS and HTML.</p>
           </section>
-          <Link to="/contact">
-            <Button> Available to Hire </Button>
+        <section className="buttons">
+          <Link to="/about">
+            <Button color="bg-grey-dark" hover="bg-grey-darker"> More about me </Button>
           </Link>
+          <Link to="/contact">
+            <Button color="bg-blue" hover="bg-blue-dark"> Available to Hire </Button>
+          </Link>
+        </section>
         </div>
-      </div>
     )
   }
 }

@@ -1,0 +1,8 @@
+@tailwind preflight;
+@tailwind components;
+@tailwind utilities;
+
+.btn-primary {
+  /* .border-grey-light .text-blue-darker */
+  @apply .mt-8 .pt-3 .pb-4 .pl-6 .pr-6 .rounded-full ml-3 mr-3 shadow-md text-white;
+}

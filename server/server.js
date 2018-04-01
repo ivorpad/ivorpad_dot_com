@@ -6,9 +6,6 @@ const config = require('./config/config');
 const mongoose = require('mongoose');
 const port = process.env.PORT || 8080;
 
-// Configuration
-// ================================================================================================
-
 
 // Set up Mongoose
 mongoose.connect( config.db );
