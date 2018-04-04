@@ -4553,6 +4553,26 @@ button,
   color: #fff;
 }
 
+.content--container {
+  background-color: #fff;
+  border-radius: .25rem;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.content--container p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  line-height: 1.5;
+  font-size: 1.125rem;
+  font-family: Constantia, Lucida Bright, Lucidabright, Lucida Serif, Lucida, DejaVu Serif, Bitstream Vera Serif, Liberation Serif, Georgia, serif;
+  color: #3d4852;
+}
+
 @media (min-width: 576px) {
   .sm\:list-reset {
     list-style: none;

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Route, Switch, withRouter } from "react-router-dom";
 import About from './About';
 import Contact from './Contact';
-import HomePage from './HomePage';
+import Homepage from './Homepage';
 import Blog from './Blog';
 import SinglePost from './SinglePost';
 import { connect } from 'react-redux'
@@ -16,9 +16,8 @@ class MainRoutes extends Component {
   
   render() {
     return (
-      <main>
         <Switch>
-          <Route exact path="/" component={HomePage} />
+          <Route exact path="/" component={Homepage} />
           <Route path="/blog/post/:slug" render={({ match }) => (
             <SinglePost data={this.handleSinglePost(match.params.slug)} />
           )} />
@@ -28,7 +27,6 @@ class MainRoutes extends Component {
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
         </Switch>
-      </main>
     )
   }
 }

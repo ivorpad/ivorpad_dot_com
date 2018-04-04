@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 class TopNav extends Component {
 
   state = {
@@ -13,7 +13,7 @@ class TopNav extends Component {
 
   render() {
     return (
-      <div className="bg-grey-light border-b pt-4 pb-4 shadow-inner">
+      <div className="bg-grey-light border-b pt-4 pb-4">
         <div className="container flex justify-between mx-auto px-4">
           <div className="w-1/4">
             <a href="/">Logo</a>
@@ -25,10 +25,10 @@ class TopNav extends Component {
 
             <div className="w-1/4 hidden sm:hidden md:hidden lg:block xl:block">
               <ul className="flex list-reset">
-                <li><Link className="text-blue-darker no-underline text-xs font-bold uppercase tracking-wide border-blue pb-4 border-b-2 pl-3 pr-3" to="/">Home</Link></li>
-                <li className="ml-3"><Link className="text-blue-darker no-underline border-b-2 border-transparent hover:border-blue text-xs font-bold uppercase tracking-wide pb-4 pl-3 pr-3" to="/blog">Articles</Link></li>
-                <li className="ml-3"><Link className="text-blue-darker no-underline border-b-2 border-transparent hover:border-blue text-xs font-bold uppercase tracking-wide pb-4 pl-3 pr-3" to="/about">About</Link></li>
-                <li className="ml-3"><Link className="text-blue-darker no-underline border-b-2 border-transparent hover:border-blue text-xs font-bold uppercase tracking-wide pb-4 pl-3 pr-3" to="/contact">Contact</Link></li>
+                <li><NavLink exact activeClassName="border-blue border-b-2" className="text-blue-darker no-underline text-xs font-bold uppercase tracking-wide pb-4  pl-3 pr-3 border-b-2 border-transparent hover:border-blue" to="/">Home</NavLink></li>
+                <li className="ml-3"><NavLink activeClassName="border-blue border-b-2" className="text-blue-darker no-underline border-b-2 border-transparent hover:border-blue text-xs font-bold uppercase tracking-wide pb-4 pl-3 pr-3" to="/blog">Articles</NavLink></li>
+                <li className="ml-3"><NavLink activeClassName="border-blue border-b-2" className="text-blue-darker no-underline border-b-2 border-transparent hover:border-blue text-xs font-bold uppercase tracking-wide pb-4 pl-3 pr-3" to="/about">About</NavLink></li>
+                <li className="ml-3"><NavLink activeClassName="border-blue border-b-2" className="text-blue-darker no-underline border-b-2 border-transparent hover:border-blue text-xs font-bold uppercase tracking-wide pb-4 pl-3 pr-3" to="/contact">Contact</NavLink></li>
               </ul>
             </div>
           </div>

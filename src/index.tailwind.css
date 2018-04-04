@@ -4,5 +4,13 @@
 
 .btn-primary {
   /* .border-grey-light .text-blue-darker */
-  @apply .mt-8 .pt-3 .pb-4 .pl-6 .pr-6 .rounded-full ml-3 mr-3 shadow-md text-white;
+  @apply mt-8 pt-3 pb-4 pl-6 pr-6 rounded-full ml-3 mr-3 shadow-md text-white;
+}
+
+.content--container {
+  @apply bg-white rounded shadow px-8 py-8 mt-8;
+}
+
+.content--container p {
+  @apply mb-4 leading-normal leading-normal text-lg font-serif text-grey-darkest;
 }

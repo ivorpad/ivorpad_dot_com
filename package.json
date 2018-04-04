@@ -26,8 +26,10 @@
     "redux-thunk": "^2.2.0",
     "sendgrid": "^5.2.3",
     "slugify": "^1.2.9",
-    "styled-components": "^3.2.1",
-    "tailwindcss": "^0.5.1"
+    "striptags": "^3.1.1",
+    "styled-components": "^3.2.5",
+    "tailwindcss": "^0.5.1",
+    "prismjs": "^1.13.0"
   },
   "devDependencies": {
     "react-scripts": "1.1.1"

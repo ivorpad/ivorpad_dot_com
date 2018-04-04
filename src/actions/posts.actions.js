@@ -1,11 +1,11 @@
-import axios from 'axios';
 import {
   FETCH_REQUEST,
   FETCH_SUCCESS,
   FETCH_FAILED
 } from '../constants/index';
 
-const getData = async (url) => await axios.get(url, { crossdomain: true });
+import { getData } from '../helpers';
+
 
 export const fetchRequest = (bool) => {
   return {

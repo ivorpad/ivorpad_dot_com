@@ -30,10 +30,12 @@ class BlogList extends Component {
   render() {
     return (
     this.props.isLoading ? 'loading...' : 
-      <div>
-        <Pagination bsSize="small">{this.paginationItems()}</Pagination>
-        <BlogListItem posts={this.props.posts} onClick={this.props.onClick} page={this.props.page} perPage={PER_PAGE} />    
-      </div>
+      <main className="container mx-auto px-4">
+        <div className="blog-container">
+          <Pagination bsSize="small">{this.paginationItems()}</Pagination>
+          <BlogListItem posts={this.props.posts} onClick={this.props.onClick} page={this.props.page} perPage={PER_PAGE} />
+        </div>    
+      </main>
     )
   }
 }

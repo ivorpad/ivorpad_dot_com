@@ -15,7 +15,7 @@ export default class Contact extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container mx-auto px-4">
         <h1>Contact Page</h1>
         <ContactForm onSubmit={this.submit} />
       </div>

@@ -11,6 +11,8 @@ import { fetchPosts } from './actions/posts.actions';
 import createHistory from 'history/createBrowserHistory';
 import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux';
 import { reducer as formReducer } from 'redux-form';
+import Footer from './components/Footer';
+import { API_URL, MAX_POSTS_TO_FETCH } from './constants/index'
 
 class App extends Component {
   
@@ -18,11 +20,12 @@ class App extends Component {
     return (
       <Provider store={store}>
         <ConnectedRouter history={history}>
-          <div className="font-sans">
+          <div className="font-sans antialiased">
             <TopNav />
-              <div className="container mx-auto px-4">
-                <MainRoutes />
-              </div>
+            <div className="main-content">
+              <MainRoutes />
+              <Footer />
+            </div>
           </div>
         </ConnectedRouter>
       </Provider>
@@ -41,9 +44,6 @@ const store = createStore(combineReducers({
   applyMiddleware(thunkMiddleware, routerMiddlewareWithHistory)
 );
 
-const API_URL = `//localhost/wordpress/wp-json/wp/v2/posts`
-const MAX_PAGES_TO_FETCH = 100;
-
-store.dispatch(fetchPosts(API_URL, MAX_PAGES_TO_FETCH));
+store.dispatch(fetchPosts(API_URL, MAX_POSTS_TO_FETCH));
 
 export default App;
