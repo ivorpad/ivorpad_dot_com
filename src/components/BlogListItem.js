@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import striptags from 'striptags';
 import moment from 'moment';
-import styled  from 'styled-components';
+// import styled  from 'styled-components';
 
-const Date = styled.span`
-  font-size: 16px;
-  text-align: left;
-  font-weight: bold;
-  color: red;
-`;
+// const Date = styled.span`
+//   font-size: 16px;
+//   text-align: left;
+//   font-weight: bold;
+//   color: red;
+// `;
 export default (props) => {
   
   const current_page = props.page;
@@ -23,11 +23,13 @@ export default (props) => {
         if (index >= start_offset && start_count < props.perPage) {
           start_count++;
           return (
-            <div className={`post post-${index} bg-white rounded p-8 shadow mb-8`} key={index}>
-              <Link className="text-blue no-underline text-xl" to={`/blog/post/${post.slug}`} onClick={props.onClick}><h2 className="mb-2" dangerouslySetInnerHTML={{ __html: post.title.rendered }}></h2></Link>
-              {/* <p className={`${trimmed(post.content.rendered).length >= 25 ? 'trimmed-excerpt' : ''} leading-normal text-grey-darkest text-lg`} dangerouslySetInnerHTML={{ __html: trimmed(striptags(post.content.rendered, ['a', 'strong', 'code'])).join(' ') }}></p> */}
-              <Date>{moment(post.date).format("MMM DD, YYYY")}</Date>
-            </div>
+            <Link key={index} className="block no-underline" to={`/blog/post/${post.slug}`} onClick={() => window.scrollTo(0, 0)}>
+              {/* bg-white rounded p-8 shadow mb-8 */}
+              <div className={`post post-${index} bg-white p-8 border-b border-grey-lighter`}>
+                <h2 className="font-normal text-grey-darkest no-underline text-xl mb-2" dangerouslySetInnerHTML={{ __html: post.title.rendered }}></h2>
+                <span className="text-xs uppercase font-bold text-grey-dark">{moment(post.date).format("MMM DD, YYYY")}</span>
+              </div>
+            </Link>
           )
         }
         return null;

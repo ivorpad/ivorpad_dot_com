@@ -4573,6 +4573,14 @@ button,
   color: #3d4852;
 }
 
+.pagination-item:hover {
+  background-color: #8795a1;
+}
+
+li.active .pagination-item {
+  background-color: #2779bd;
+}
+
 @media (min-width: 576px) {
   .sm\:list-reset {
     list-style: none;

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import '../App.css';
 import { Link, NavLink } from "react-router-dom";
 class TopNav extends Component {
-
   state = {
     menuIsOpen: false
   }
@@ -16,7 +15,7 @@ class TopNav extends Component {
       <div className="bg-grey-light border-b pt-4 pb-4">
         <div className="container flex justify-between mx-auto px-4">
           <div className="w-1/4">
-            <a href="/">Logo</a>
+            <Link to="/">Logo</Link>
           </div>
           <div>
             <div className="w-1/4 sm:block md:block lg:hidden">
@@ -26,7 +25,7 @@ class TopNav extends Component {
             <div className="w-1/4 hidden sm:hidden md:hidden lg:block xl:block">
               <ul className="flex list-reset">
                 <li><NavLink exact activeClassName="border-blue border-b-2" className="text-blue-darker no-underline text-xs font-bold uppercase tracking-wide pb-4  pl-3 pr-3 border-b-2 border-transparent hover:border-blue" to="/">Home</NavLink></li>
-                <li className="ml-3"><NavLink activeClassName="border-blue border-b-2" className="text-blue-darker no-underline border-b-2 border-transparent hover:border-blue text-xs font-bold uppercase tracking-wide pb-4 pl-3 pr-3" to="/blog">Articles</NavLink></li>
+                <li className="ml-3"><NavLink activeClassName="border-blue border-b-2" className="text-blue-darker no-underline border-b-2 border-transparent hover:border-blue text-xs font-bold uppercase tracking-wide pb-4 pl-3 pr-3" to="/blog">Journal</NavLink></li>
                 <li className="ml-3"><NavLink activeClassName="border-blue border-b-2" className="text-blue-darker no-underline border-b-2 border-transparent hover:border-blue text-xs font-bold uppercase tracking-wide pb-4 pl-3 pr-3" to="/about">About</NavLink></li>
                 <li className="ml-3"><NavLink activeClassName="border-blue border-b-2" className="text-blue-darker no-underline border-b-2 border-transparent hover:border-blue text-xs font-bold uppercase tracking-wide pb-4 pl-3 pr-3" to="/contact">Contact</NavLink></li>
               </ul>
