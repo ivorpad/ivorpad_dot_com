@@ -4,7 +4,7 @@ import Button from './Button';
 import 'react-tippy/dist/tippy.css';
 import { Tooltip } from 'react-tippy';
 
-export default class HomePage extends Component {
+export default class Homepage extends Component {
 
   render() {
     return (
