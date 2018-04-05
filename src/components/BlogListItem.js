@@ -2,14 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import striptags from 'striptags';
 import moment from 'moment';
-// import styled  from 'styled-components';
 
-// const Date = styled.span`
-//   font-size: 16px;
-//   text-align: left;
-//   font-weight: bold;
-//   color: red;
-// `;
 export default (props) => {
   
   const current_page = props.page;
