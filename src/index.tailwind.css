@@ -22,3 +22,10 @@
 li.active .pagination-item {
   @apply bg-blue-dark;
 }
+
+@media(min-width: 1441px) {
+	.blog-container {
+    @apply w-1/3;
+  }
+}
+

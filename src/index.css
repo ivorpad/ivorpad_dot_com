@@ -4581,6 +4581,12 @@ li.active .pagination-item {
   background-color: #2779bd;
 }
 
+@media (min-width: 1441px) {
+  .blog-container {
+    width: 33.33333%;
+  }
+}
+
 @media (min-width: 576px) {
   .sm\:list-reset {
     list-style: none;

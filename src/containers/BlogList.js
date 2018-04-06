@@ -30,8 +30,8 @@ class BlogList extends Component {
   render() {
     return (
     this.props.isLoading ? 'loading...' : 
-      <main className="container mx-auto px-4 w-1/3">
-        <div className="blog-container">
+        <main className="blog-container container mx-auto px-4 w-screen lg:w-2/3 xl:w-1/2">
+        <div className="content-container">
           <h2 className="py-8 text-blue-darkest ml-8 inline-block align-middle">Journal</h2> <span className="align-middle text-sm text-grey-dark font-serif italic"> — Code, thoughts & more...</span>
           <BlogListItem posts={this.props.posts} onClick={this.props.onClick} page={this.props.page} perPage={PER_PAGE} />
           <Pagination className="pagination list-reset flex justify-center mt-8">{this.paginationItems()}</Pagination>
