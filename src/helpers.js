@@ -6,5 +6,5 @@ export const getAge = (dateOfBirth) => {
   // e.g. getAge("1983-04-26");
 }
 
-export const getData = async (url) => await axios.get(url);
+export const getData = async (url) => await axios.get(url, { crossdomain: true });
 

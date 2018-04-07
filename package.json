@@ -13,12 +13,14 @@
     "moment": "^2.21.0",
     "mongoose": "^5.0.12",
     "node-uuid": "^1.4.8",
+    "prismjs": "^1.13.0",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.9",
+    "react-textarea-autosize": "^6.1.0",
     "react-tippy": "^1.2.2",
     "redux": "^3.7.2",
     "redux-form": "^7.3.0",
@@ -28,8 +30,7 @@
     "slugify": "^1.2.9",
     "striptags": "^3.1.1",
     "styled-components": "^3.2.5",
-    "tailwindcss": "^0.5.1",
-    "prismjs": "^1.13.0"
+    "tailwindcss": "^0.5.1"
   },
   "devDependencies": {
     "react-scripts": "1.1.1"

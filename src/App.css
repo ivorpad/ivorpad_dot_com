@@ -84,3 +84,7 @@ body {
 		height: calc(100vh - 68px);
 	}
 }
+
+.arrow {
+  top: 40%;
+}

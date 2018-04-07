@@ -1,5 +1,6 @@
-var helper = require('sendgrid').mail;
+const helper = require('sendgrid').mail;
 const async = require('async');
+const striptags = require('striptags');
 
 function sendEmail(
   parentCallback,
@@ -52,17 +53,32 @@ function sendEmail(
   );
 }
 module.exports = (app) => {
+
+  const getSubject = (subject) => {
+    if(subject === 'project') {
+      return '[Talk about a project]';
+    } else if(subject === 'say-hi') {
+      return '[Just saying hi!]';
+    }
+    
+    return `[ivorpad.com]`;
+  }
+
   app.post('/api/send', function (req, res, next) {
-    const emailContent = `${req.body.firstName} ${req.body.lastName}, </br> ${req.body.comment}`;
+    const emailContent = `
+    <strong>Name:</strong> ${req.body.firstName} ${req.body.lastName}, 
+    <br/>
+    <br/> 
+    <strong>Comment:</strong> ${req.body.comment}`;
     async.parallel([
       function (callback) {
         sendEmail(
           callback,
           'ivor.padilla@gmail.com',
-          [req.body.to],
-          `[ivorpad.com] Contact Form Request`,
+          [req.body.email],
+          `${getSubject(req.body.subject)} Contact Form Request`,
           emailContent,
-          emailContent
+          striptags(emailContent, ['br', 'strong'])
         );
       }
     ], function (err, results) {

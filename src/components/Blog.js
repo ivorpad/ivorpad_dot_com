@@ -7,7 +7,7 @@ class Blog extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container mx-auto px-4 flex justify-center">
         <BlogList />
       </div>
     )

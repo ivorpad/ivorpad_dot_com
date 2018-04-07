@@ -19,7 +19,7 @@ class MainRoutes extends Component {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/blog/post/:slug" render={({ match }) => (
-            <SinglePost data={this.handleSinglePost(match.params.slug)} />
+          <SinglePost data={this.handleSinglePost(match.params.slug)} isLoading={this.props.postsLoading} />
           )} />
           <Route path="/blog" render={props => (
             <Blog {...props} />
@@ -31,9 +31,10 @@ class MainRoutes extends Component {
   }
 }
 
-const mapStateToProps = ({ data }) => {
+const mapStateToProps = ({data}) => {
   return {
-    posts: data.posts
+    posts: data.posts,
+    postsLoading: data.postsLoading
   }
 }
 

@@ -8,11 +8,11 @@
 }
 
 .content--container {
-  @apply bg-white rounded shadow px-8 py-8 mt-8;
+  @apply rounded shadow px-8 py-8 mt-8;
 }
 
 .content--container p {
-  @apply mb-4 leading-normal leading-normal text-lg font-serif text-grey-darkest;
+  @apply mb-4 leading-normal text-lg font-serif text-grey-darkest;
 }
 
 .pagination-item:hover {
@@ -23,9 +23,9 @@ li.active .pagination-item {
   @apply bg-blue-dark;
 }
 
-@media(min-width: 1441px) {
+/* @media(min-width: 1441px) {
 	.blog-container {
     @apply w-1/3;
   }
-}
+} */
 

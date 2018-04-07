@@ -25,8 +25,8 @@ class TopNav extends Component {
             <div className="w-1/4 hidden sm:hidden md:hidden lg:block xl:block">
               <ul className="flex list-reset">
                 <li><NavLink exact activeClassName="border-blue border-b-2" className="text-blue-darker no-underline text-xs font-bold uppercase tracking-wide pb-4  pl-3 pr-3 border-b-2 border-transparent hover:border-blue" to="/">Home</NavLink></li>
-                <li className="ml-3"><NavLink activeClassName="border-blue border-b-2" className="text-blue-darker no-underline border-b-2 border-transparent hover:border-blue text-xs font-bold uppercase tracking-wide pb-4 pl-3 pr-3" to="/blog">Journal</NavLink></li>
                 <li className="ml-3"><NavLink activeClassName="border-blue border-b-2" className="text-blue-darker no-underline border-b-2 border-transparent hover:border-blue text-xs font-bold uppercase tracking-wide pb-4 pl-3 pr-3" to="/about">About</NavLink></li>
+                <li className="ml-3"><NavLink activeClassName="border-blue border-b-2" className="text-blue-darker no-underline border-b-2 border-transparent hover:border-blue text-xs font-bold uppercase tracking-wide pb-4 pl-3 pr-3" to="/blog">Journal</NavLink></li>
                 <li className="ml-3"><NavLink activeClassName="border-blue border-b-2" className="text-blue-darker no-underline border-b-2 border-transparent hover:border-blue text-xs font-bold uppercase tracking-wide pb-4 pl-3 pr-3" to="/contact">Contact</NavLink></li>
               </ul>
             </div>

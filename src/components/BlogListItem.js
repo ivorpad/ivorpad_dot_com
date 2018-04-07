@@ -11,7 +11,7 @@ export default (props) => {
   let start_count = 0;
   
   return (
-    <div className="post-container">
+    <div className="posts-container">
       {props.posts.map((post, index) => {
         if (index >= start_offset && start_count < props.perPage) {
           start_count++;
