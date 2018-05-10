@@ -33,7 +33,7 @@ class BlogList extends Component {
         <main className="blog-container w-1/2">
           <h2 className="py-8 text-blue-darkest ml-8 inline-block align-middle">Journal</h2> <span className="align-middle text-sm text-grey-dark font-serif italic"> — Code, thoughts & more...</span>
           <BlogListItem posts={this.props.posts} onClick={this.props.onClick} page={this.props.page} perPage={PER_PAGE} />
-          <Pagination className="pagination list-reset flex justify-center mt-8">{this.paginationItems()}</Pagination>
+          <Pagination className="pagination list-reset flex justify-center mt-8 mb-8">{this.paginationItems()}</Pagination>
       </main>
     )
   }

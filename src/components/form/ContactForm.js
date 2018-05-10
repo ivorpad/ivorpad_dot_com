@@ -7,7 +7,7 @@ let ContactForm = props => {
   const { handleSubmit } = props;
 
   return(
-    <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-8">
       <div>
         <label className="block text-grey-darker text-sm font-bold mb-2" htmlFor="firstName">First Name</label>
         <Field className="shadow-inner appearance-none border rounded w-full py-2 px-3 text-grey-darker" name="firstName" component="input" type="text" />

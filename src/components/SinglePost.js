@@ -24,7 +24,7 @@ export default class SinglePost extends Component {
     if(this.props.isLoading) return( <div> <p>is loading...</p> </div> );
     
     return (
-      <div className={`content--container ${tag_names[0] === 'black' ? 'bg-black' : 'bg-white'}`}>
+      <div className="content--container bg-white">
         <h1 className="mt-8 pb-4" dangerouslySetInnerHTML={{ __html: postTitle }}></h1>
         <div dangerouslySetInnerHTML={{ __html: postContent }}></div>
       </div>
