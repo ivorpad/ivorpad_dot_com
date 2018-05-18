@@ -1,1 +1,1 @@
-![ivorpad.com](https://i.imgur.com/YoEM73S.png)
+## Personal website to be hosted on ivorpad.com
